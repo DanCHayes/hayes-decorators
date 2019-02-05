@@ -2,3 +2,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+nav div {
+	text-decoration: none;
+	color: black;
+}
+
+.inactive {
+	text-decoration: none;
+	color: black;
+}
+
+.active {
+	color: grey;
+}

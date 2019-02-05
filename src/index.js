@@ -1,23 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Switch, Route, NavLink, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './Routes/App/App';
 import Contact from './Routes/Contact/Contact';
 import Gallery from './Routes/Gallery/Gallery';
+import NotFound from './Routes/NotFound/NotFound';
 import * as serviceWorker from './serviceWorker';
 
 const Routing = (
 		<Router>
 			<div>
 				<nav>
-					<Link to='/'>Home</Link>
-					<Link to='/contact'>Contact</Link>
-					<Link to='/gallery'>Gallery</Link>
+					<div>
+						<NavLink className='inactive' activeClassName="active" to='/'>Home</NavLink>
+					</div>
+					<div>
+						<NavLink className='inactive' activeClassName="active" to='/contact'>Contact</NavLink>
+					</div>
+					<div>
+						<NavLink className='inactive' activeClassName="active" to='/gallery'>Gallery</NavLink>
+					</div>
+				</nav>	
+				<Switch>
 					<Route exact path="/" component={App} />
-					<Route exact path="/contact" component={Contact} />
-					<Route exact path="/gallery" component={Gallery} />
-				</nav>
+					<Route path="/contact" component={Contact} />
+					<Route path="/gallery" component={Gallery} />
+					<Route component={NotFound}/>
+				</Switch>
 			</div>
 		</Router>
 
