@@ -3,11 +3,6 @@ body {
   padding: 0;
 }
 
-nav div {
-	text-decoration: none;
-	color: black;
-}
-
 .inactive {
 	text-decoration: none;
 	color: black;

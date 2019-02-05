@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Switch, Route, NavLink, BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
-import App from './Routes/App/App';
-import Contact from './Routes/Contact/Contact';
-import Gallery from './Routes/Gallery/Gallery';
-import NotFound from './Routes/NotFound/NotFound';
 import * as serviceWorker from './serviceWorker';
+import { Switch, Route, NavLink, BrowserRouter as Router } from 'react-router-dom';
+import App from './Containers/App';
+import Contact from './Containers/Contact';
+import Gallery from './Containers/Gallery';
+import NotFound from './Containers/NotFound';
+import './index.css';
 
 const Routing = (
 		<Router>
@@ -22,6 +22,7 @@ const Routing = (
 						<NavLink className='inactive' activeClassName="active" to='/gallery'>Gallery</NavLink>
 					</div>
 				</nav>	
+				<hr/>
 				<Switch>
 					<Route exact path="/" component={App} />
 					<Route path="/contact" component={Contact} />
